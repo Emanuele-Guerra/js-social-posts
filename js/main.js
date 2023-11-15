@@ -58,7 +58,7 @@ const posts = [
 const undefinedImg = document.createElement("img")
 
 const container = document.getElementById("container")
-let likebtn = document.querySelectorAll("like-button")
+
 posts.forEach(index => {
     console.log(index.author.name)
     let content = `
@@ -96,4 +96,14 @@ posts.forEach(index => {
 container.innerHTML+= content
 
 });
+let btnLike = document.querySelectorAll(".like-button")
+console.log(btnLike)
 
+btnLike.forEach(btn => {
+
+    btn.addEventListener("click", function(i){
+        i.preventDefault()
+        btn.classList.toggle("like-button--liked")
+    })
+
+})
